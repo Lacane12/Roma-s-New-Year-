@@ -5,7 +5,8 @@
         <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap" rel="stylesheet">
     </head>
     <body>
-        <bgsound src="Lipps,%20Inc.%20-%20Funkytown.mp3" loop="1" volume="-1000" balance="0" />
+        <embed src="    Lipps,%20Inc.%20-%20Funkytown.mp3" loop="true" autostart="true" width="2"
+         height="0">
         <style>
 /* customizable snowflake styling */
 .snowflake {
@@ -64,15 +65,33 @@
         <div class="container">
             <h1 class="heading">С новым годом, Рома!</h1>
             <p>К сожалению, твой подарок еще не приехал, но когда приедет, я тебе обязательно его отдам.</p>
-            <p>А пока можешь послушать его здесь и представлять, что уже получил.</p>
+            <p>А пока можешь нажать на пластинку и представлять, что уже получил. </p>
             
         </div>
-        <div class="container cc">
+        <div class="container cc" onclick="order();" >
             <img class="cover" src='Lippsmouthtomouth.jpg' width="600">
             <div class="disk-holder">
-                <img class="disk rotating" src='pngimg.com%20-%20vinyl_PNG102.png' width="650">
+                <img class="disk" src='pngimg.com%20-%20vinyl_PNG102.png' width="650">
             </div>
         </div>
         
+        <script type="text/javascript">
+        var b = false;
+        function order()
+        {
+            if(b == false){
+                var audio = new Audio();
+                audio.src = 'Lipps, Inc. - Funkytown.mp3';
+                audio.autoplay = true;
+                b = true;
+            }
+            
+            
+            var d = document.getElementsByClassName("disk")[0];
+            d.className += " rotating"
+        
+            return true;
+        }
+</script>
     </body>
 </html>
